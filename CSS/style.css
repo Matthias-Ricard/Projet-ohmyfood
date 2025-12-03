@@ -40,6 +40,10 @@ section {
   color: rgb(126, 126, 126);
 }
 
+.purpleicon {
+  color: #9356DC;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -75,7 +79,7 @@ header {
   background-color: rgba(0, 0, 0, 0.05);
 }
 .Exp .button {
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(to top left, #9356DC 20%, #FF79DA);
   border-radius: 50px;
   border: none;
   height: 50px;
@@ -87,16 +91,16 @@ header {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
 .Exp .button:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.2);
   transition: 500ms;
 }
 
-.button .Fonctionnement-btn {
+.Fonctionnement-btn {
   display: flex;
-  margin: 20px;
+  margin: 0px;
   padding: 10px 0;
 }
-.button .Fonctionnement-btn span {
+.Fonctionnement-btn span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,7 +118,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 15px 0;
+  margin: 0px;
   border-radius: 25px;
   gap: 18px;
   width: 100%;
@@ -140,10 +144,6 @@ header {
   margin-left: -12px;
   border: none;
   color: white;
-}
-
-.Fonctionnement-btn:hover i {
-  color: #9356DC;
 }
 
 .iconnum {
@@ -215,18 +215,39 @@ header {
 
 .heart-full {
   position: absolute;
-  top: 2.5px;
+  top: 3px;
   left: 0;
   color: transparent;
   background-image: linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
           background-clip: text;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.card-heart:active .heart-full {
+.card-heart:hover .heart-full {
   opacity: 1;
+  transform: scale(1);
+}
+
+.card-heart:hover .heart {
+  opacity: 0;
+}
+
+#object-position1 {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+#object-position2 {
+  -o-object-position: 50% 62%;
+     object-position: 50% 62%;
+}
+
+#object-position3 {
+  -o-object-position: bottom;
+     object-position: bottom;
 }
 
 footer {
@@ -237,8 +258,6 @@ footer {
 footer .shrikhand-regular {
   font-family: "Shrikhand", serif;
   font-size: 23px;
-  font-weight: 900;
-  font-style: italic;
   color: white;
   padding: 15px 40px;
   margin: 0;
@@ -255,4 +274,47 @@ footer ul a {
   gap: 10px;
   height: 27px;
   color: white;
+}
+
+.minusicon {
+  width: 14px;
+}
+
+#loader {
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 0.8s ease forwards;
+  animation-delay: 2s;
+  inset: 0;
+  gap: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #9356DC;
+}
+
+.loader-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #9356DC;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
