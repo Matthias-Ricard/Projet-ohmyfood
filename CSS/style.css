@@ -161,7 +161,7 @@ header {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-#resto .card {
+.card {
   display: block;
   border-radius: 15px;
   overflow: hidden;
@@ -169,11 +169,11 @@ header {
   margin-bottom: 15px;
   position: relative;
 }
-#resto .card h3 {
+.card h3 {
   margin-bottom: -10px;
 }
 
-#resto .card img {
+.card img {
   width: 100%;
   height: 170px;
   -o-object-fit: cover;
@@ -289,6 +289,7 @@ footer ul a {
   animation: fadeOut 0.8s ease forwards;
   animation-delay: 2s;
   inset: 0;
+  z-index: 9999;
   gap: 20px;
   font-size: 25px;
   font-weight: 700;
@@ -316,5 +317,50 @@ footer ul a {
   to {
     opacity: 0;
     visibility: hidden;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-container {
+    max-width: 1440px;
+    width: 100%;
+  }
+  section {
+    padding: 35px 150px;
+  }
+  .navbar {
+    box-shadow: none;
+  }
+  .Fonctionnement-btn-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  .Fonctionnement-btn-box .borderfct {
+    padding-right: 20px;
+  }
+  .Fonctionnement-btn {
+    width: 100%;
+  }
+  .box-resto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .box-resto .resto-desktop {
+    width: 45%;
+    height: 251px;
+    margin-bottom: 50px;
+  }
+  footer {
+    flex-direction: row-reverse;
+    padding-top: 50px;
+  }
+  footer ul {
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    padding-right: 40px;
   }
 }
