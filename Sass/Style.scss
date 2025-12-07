@@ -113,6 +113,7 @@ header {
     display: flex;
     margin: 0px;
     padding: 10px 0;
+    flex-direction: row;
     span {
         display: flex;
         align-items: center;
@@ -337,62 +338,6 @@ footer ul {
 }
 
 
-// *******desktop*******
-@media screen and (min-width: 1024px) {
-
-    .main-container {
-        max-width: 1440px;
-        width: 100%;
-    }
-
-     section {
-        padding: 35px 150px;
-    }
-
-    .navbar {
-        box-shadow: none;
-    }
-
-    .Fonctionnement-btn-box {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        margin-bottom: 20px;
-        .borderfct {
-            padding-right: 20px;
-        }
-    }
-
-    .Fonctionnement-btn {
-    width: 100%;
-    }
-
-    .box-resto {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        .resto-desktop {
-            width: 45%;
-            height: 251px;
-            margin-bottom: 50px;
-        }
-    }
-
-    footer {
-        flex-direction: row-reverse;
-        padding-top: 50px;
-        ul {
-        flex-direction: row;
-        display: flex;
-        gap: 20px;
-        margin-top: 20px;
-        padding-right: 40px;
-    }
-    }
-    
-}
-
-
 
 // *******Menu*******
 
@@ -460,9 +405,9 @@ footer ul {
     flex-direction: column;
     border-radius: 25px;
     width: 100%;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     background-color: rgba(246, 246, 246, 1);
     padding: 0 15px;
+    transition: width 0.8s ease;
     .menu-txt {
         flex-direction: row;
         display: flex;
@@ -471,6 +416,8 @@ footer ul {
         & p {
             font-size: 14px;
             font-weight: 300;
+            height: 17px;
+            overflow: hidden;
         }
         & strong {
             display: flex;
@@ -478,6 +425,44 @@ footer ul {
         }
     }
 }
+
+.check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-tertiaire;
+    overflow: hidden;
+    transition: width 0.8s ease;
+    width: 60px;
+    margin-right: -60px;
+    border-radius: 0 25% 25% 0;
+    i {
+        color: $color-tertiaire;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        background-color: white;
+        font-size: 16px;
+    }
+}
+
+.menu-card {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+}
+
+.menu-card:hover {
+
+    .check {
+        
+        margin-right: 0px;
+        transition: margin-right 0.4s ease;
+    }
+}
+
 
 #command {
     background: rgba(246, 246, 246, 1);
@@ -488,4 +473,88 @@ footer ul {
 
 .margebot {
     margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 1s ease forwards;
+}
+
+@keyframes reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+// *******desktop*******
+@media screen and (min-width: 1024px) {
+
+    .main-container {
+        max-width: 1440px;
+        width: 100%;
+    }
+
+     section {
+        padding: 35px 150px;
+    }
+
+    .navbar {
+        box-shadow: none;
+    }
+
+    .Fonctionnement-btn-box {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 20px;
+        .borderfct {
+            padding-right: 20px;
+        }
+    }
+
+    .Fonctionnement-btn {
+    width: 100%;
+    }
+
+    .box-resto {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .resto-desktop {
+            width: 45%;
+            height: 251px;
+            margin-bottom: 50px;
+        }
+    }
+
+    footer {
+        flex-direction: row-reverse;
+        padding-top: 50px;
+        ul {
+        flex-direction: row;
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        padding-right: 40px;
+    }
+    }
+
+    #menu-resto {
+        height: 383px;
+    }
+
+    #menu-desktop {
+        display: flex;
+        justify-content: center;
+    }
+
+    #menu {
+        width: 50%;
+    }
+
+    .bigtitle {
+        justify-content: center;
+        gap: 15px;
+    }
+    
 }
