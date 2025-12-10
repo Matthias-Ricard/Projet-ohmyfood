@@ -88,7 +88,7 @@ header {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.05);
     .button {
-        background: linear-gradient(to top left, $color-primaire 20%, $color-secondaire);
+        background: linear-gradient(to top left, $color-primaire 55%, $color-secondaire);
         border-radius: 50px;
         border: none;
         height: 50px;
@@ -307,7 +307,7 @@ footer ul {
     justify-content: center;
     align-items: center;
     animation: fadeOut 0.8s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 3s;
     inset: 0;
     z-index: 9999;
     gap: 20px;
@@ -367,13 +367,16 @@ footer ul {
   h3 {
     font-weight: 500;
     font-size: 17px;
+    overflow: hidden;
+    height: 19px;
+    text-overflow: ellipsis;
   }
 }
 
 .bigtitle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     #bigheart {
         font-size: 25px;
     }
@@ -408,16 +411,19 @@ footer ul {
     background-color: rgba(246, 246, 246, 1);
     padding: 0 15px;
     transition: width 0.8s ease;
+    white-space: nowrap;
+    overflow: hidden;
     .menu-txt {
         flex-direction: row;
         display: flex;
         justify-content: space-between;
-        margin-top: -30px;
+        margin-top: -25px;
         & p {
             font-size: 14px;
             font-weight: 300;
             height: 17px;
             overflow: hidden;
+            text-overflow: ellipsis;
         }
         & strong {
             display: flex;
@@ -455,9 +461,8 @@ footer ul {
 }
 
 .menu-card:hover {
-
     .check {
-        
+        z-index: 9999;
         margin-right: 0px;
         transition: margin-right 0.4s ease;
     }
@@ -474,8 +479,21 @@ footer ul {
 .margebot {
     margin-bottom: 25px;
     opacity: 0;
+}
+
+#menu1 {
     transform: translateY(20px);
-    animation: reveal 1s ease forwards;
+    animation: reveal 1.5s ease forwards;
+}
+
+#menu2 {
+    transform: translateY(20px);
+    animation: reveal 1.5s 1s ease forwards;
+}
+
+#menu3 {
+    transform: translateY(20px);
+    animation: reveal 1.5s 2s ease forwards;
 }
 
 @keyframes reveal {
@@ -555,6 +573,22 @@ footer ul {
     .bigtitle {
         justify-content: center;
         gap: 15px;
+    }
+
+    #object-position1 {
+        object-position: 50% 65%;
+    }
+
+    #object-position2 {
+        object-position: 50% 57%;
+    }
+
+    #object-position3 {
+        object-position: 50% 69%;
+    }
+
+    .heart-full {
+        top: 1px;
     }
     
 }
