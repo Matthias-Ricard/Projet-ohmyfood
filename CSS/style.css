@@ -81,7 +81,7 @@ header {
 .Exp .button {
   background: linear-gradient(to top left, #9356DC 55%, #FF79DA);
   border-radius: 50px;
-  border: none;
+  align-content: center;
   height: 50px;
   font-size: 16px;
   font-weight: 500;
@@ -247,6 +247,11 @@ header {
 }
 
 #object-position3 {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+#object-position4 {
   -o-object-position: bottom;
      object-position: bottom;
 }
@@ -418,7 +423,6 @@ footer ul a {
   justify-content: center;
   background-color: #99E2D0;
   overflow: hidden;
-  transition: width 0.8s ease;
   width: 60px;
   margin-right: -60px;
   border-radius: 0 25% 25% 0;

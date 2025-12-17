@@ -90,7 +90,7 @@ header {
     .button {
         background: linear-gradient(to top left, $color-primaire 55%, $color-secondaire);
         border-radius: 50px;
-        border: none;
+        align-content: center;
         height: 50px;
         font-size: 16px;
         font-weight: 500;
@@ -262,6 +262,10 @@ header {
 }
 
 #object-position3 {
+    object-position: bottom;
+}
+
+#object-position4 {
     object-position: bottom;
 }
 
@@ -438,7 +442,7 @@ footer ul {
     justify-content: center;
     background-color: $color-tertiaire;
     overflow: hidden;
-    transition: width 0.8s ease;
+    
     width: 60px;
     margin-right: -60px;
     border-radius: 0 25% 25% 0;
@@ -531,7 +535,7 @@ footer ul {
     }
 
     .Fonctionnement-btn {
-    width: 100%;
+        width: 100%;
     }
 
     .box-resto {
